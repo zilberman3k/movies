@@ -1,20 +1,14 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import PropTypes from 'prop-types'
 import {fetchTopRatedMovies,selectMovie,deSelectMovie} from '../store/actions'
-
 
 import logo from './powtoon.svg'
 import './MovieLibrary.css'
-import {getMovies,getSelectedMovie} from '../store/selectors'
+import {getMovies, getSelectedMovie, getSortOrder} from '../store/selectors'
 import MoviesList from './MoviesList'
 import '../../styles.scss';
 
 class MovieLibrary extends Component {
-
-  static propTypes = {
-
-  }
 
   componentDidMount() {
     const {fetchTopRatedMovies} = this.props;
@@ -24,7 +18,7 @@ class MovieLibrary extends Component {
   render() {
     const {movies,selectedMovie} = this.props;
     return (
-      <div className={`MovieLibrary ${!!selectedMovie ? 'overlay':''}`}>
+      <div className={`MovieLibrary ${selectedMovie ? 'overlay':''}`}>
         <header className="ML-header">
           <img src={logo} className="ML-logo" alt="logo" />
         </header>
@@ -38,5 +32,6 @@ class MovieLibrary extends Component {
 
 export default connect(state => ({
   movies: getMovies(state),
-  selectedMovie: getSelectedMovie(state)
+  selectedMovie: getSelectedMovie(state),
+  sortOrder:getSortOrder(state)
 }), {fetchTopRatedMovies})(MovieLibrary)

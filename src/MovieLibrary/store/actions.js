@@ -1,4 +1,4 @@
-import {FETCH_MOVIES,SELECT_MOVIE,DESELECT_MOVIE} from '../../actionTypes'
+import {FETCH_MOVIES,SELECT_MOVIE,DESELECT_MOVIE,SORT_ORDER} from '../../actionTypes'
 import topRatedMovies from '../mocks/topTatedMovies'
 
 export function fetchTopRatedMovies() {
@@ -18,5 +18,12 @@ export function selectMovie(movie) {
 export function deSelectMovie() {
   return {
     type: DESELECT_MOVIE,
+  }
+}
+
+export function setSortOrder(order) {
+  return {
+    type: SORT_ORDER,
+    payload: order
   }
 }

@@ -1,8 +1,10 @@
-import {FETCH_MOVIES,SELECT_MOVIE,DESELECT_MOVIE} from '../../actionTypes'
+import {FETCH_MOVIES,SELECT_MOVIE,DESELECT_MOVIE,SORT_ORDER} from '../../actionTypes'
+import {orderMovies} from "../../utils";
 
 const initialState = {
   movies: [],
-  selectedMovie: null
+  selectedMovie: null,
+  sortOrder:''
 };
 
 export default function movies(state = initialState, action) {
@@ -26,6 +28,13 @@ export default function movies(state = initialState, action) {
         ...state,
         selectedMovie:null
       };
+    case SORT_ORDER:
+     debugger;
+      return {
+        ...state,
+        sortOrder:payload,
+        movies: [...orderMovies(state.movies,payload)]
+      }
     default:
       return state
   }
