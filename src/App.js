@@ -5,7 +5,7 @@ import thunk from 'redux-thunk'
 
 import rootReducer from './rootReducer'
 import MovieLibrary from './MovieLibrary'
-
+import './styles.scss';
 
 const store = createStore(
   rootReducer,

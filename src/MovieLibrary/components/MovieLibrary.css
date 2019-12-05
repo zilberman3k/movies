@@ -1,28 +1,27 @@
 .MovieLibrary {
-  text-align: center;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(9, 9, 121, 0.3785889355742297) 31%, rgba(66, 61, 166, 0.227328431372549) 69%, rgba(0, 212, 255, 1) 100%);
 }
 
 .ML-logo {
-  animation: ML-logo-spin infinite 8s ease;
-  height: 80px;
+
+    height: 80px;
 }
 
 .ML-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+    height: 5rem;
+    padding: 20px;
+    color: white;
 }
 
 .ML-title {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .ML-intro {
-  font-size: large;
+    font-size: large;
 }
-
-@keyframes ML-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(720deg); }
+.overlay .sort-list,.overlay .items {
+    opacity: 0.3;
+    pointer-events: none;
 }
