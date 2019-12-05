@@ -4,9 +4,7 @@ import {fetchFirstMovieBulk} from '../store/actions'
 import logo from './powtoon.svg'
 import './MovieLibrary.css'
 import {getMovies, getSelectedMovie, getSortOrder} from '../store/selectors'
-import MoviesList from './MoviesList'
-import '../../styles.scss';
-
+import MoviesList from './MoviesList';
 
 class MovieLibrary extends Component {
 

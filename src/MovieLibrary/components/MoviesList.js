@@ -4,8 +4,6 @@ import classNames from 'classnames'
 
 import TMDBImage from './TMDBImage'
 import './MoviesList.css'
-
-import '../../styles.scss';
 import {connect} from "react-redux";
 import {getMovies, getSelectedMovie} from "../store/selectors";
 import {deSelectMovie, fetchFirstMovieBulk, selectMovie, setSortOrder} from "../store/actions";

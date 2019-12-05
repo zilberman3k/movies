@@ -4,7 +4,6 @@ import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import rootReducer from './rootReducer'
 import MovieLibrary from './MovieLibrary'
-import './styles.scss';
 import debounce from "lodash.debounce";
 import {loadExtraPage} from "./MovieLibrary/store/actions";
 
