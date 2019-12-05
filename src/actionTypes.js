@@ -2,3 +2,5 @@ export const FETCH_MOVIES = 'FETCH_MOVIES';
 export const SELECT_MOVIE = 'SELECT_MOVIE';
 export const DESELECT_MOVIE = 'DESELECT_MOVIE';
 export const SORT_ORDER ='SORT_ORDER';
+export const SET_PAGE_NUMBER ='SET_PAGE_NUMBER';
+export const LOAD_EXTRA_PAGE ='LOAD_EXTRA_PAGE';

@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
-
 import rootReducer from './rootReducer'
 import MovieLibrary from './MovieLibrary'
 import './styles.scss';
+import debounce from "lodash.debounce";
+import {loadExtraPage} from "./MovieLibrary/store/actions";
 
 const store = createStore(
   rootReducer,
@@ -23,5 +24,15 @@ class App extends Component {
     )
   }
 }
+
+window.onscroll = debounce(() => {
+
+  if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
+    store.dispatch(loadExtraPage())
+  }
+}, 100);
+
+
+window.store=store;
 
 export default App

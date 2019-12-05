@@ -8,7 +8,7 @@ import './MoviesList.css'
 import '../../styles.scss';
 import {connect} from "react-redux";
 import {getMovies, getSelectedMovie} from "../store/selectors";
-import {deSelectMovie, fetchTopRatedMovies, selectMovie, setSortOrder} from "../store/actions";
+import {deSelectMovie, fetchFirstMovieBulk, selectMovie, setSortOrder} from "../store/actions";
 
 class MoviesList extends PureComponent {
 
@@ -56,7 +56,7 @@ class MoviesList extends PureComponent {
 export default connect(state => ({
     movies: getMovies(state),
     selectedMovie: getSelectedMovie(state)
-}), { selectMovie, deSelectMovie, setSortOrder,fetchTopRatedMovies})(MoviesList)
+}), { selectMovie, deSelectMovie, setSortOrder,fetchTopRatedMovies: fetchFirstMovieBulk})(MoviesList)
 
 const ExpandedMovieItem = ({movie: {title, original_title, poster_path, overview, vote_average, vote_count}, onClose}) => (
     <div className="expanded-movie-item" onClick={onClose}>
