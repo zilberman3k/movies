@@ -11,8 +11,11 @@ import '../../styles.scss';
 class MovieLibrary extends Component {
 
   componentDidMount() {
+   // https://api.themoviedb.org/3/discover/movie?api_key=54ffed57deb5a7a8688be4de3007e578&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1
     const {fetchTopRatedMovies} = this.props;
     fetchTopRatedMovies()
+      // https://api.themoviedb.org
+
   }
 
   render() {

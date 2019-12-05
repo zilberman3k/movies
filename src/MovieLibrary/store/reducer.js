@@ -29,7 +29,6 @@ export default function movies(state = initialState, action) {
         selectedMovie:null
       };
     case SORT_ORDER:
-     debugger;
       return {
         ...state,
         sortOrder:payload,
